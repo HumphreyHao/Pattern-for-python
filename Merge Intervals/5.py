@@ -17,7 +17,8 @@ def min_meeting_rooms(meetings):
     minRooms=0
     minHeap = []
     for meeting in meetings:
-        while len(minHeap)>0 and meeting.start>minHeap[0].end:
+        #update all the cracking meeting, and for those not cracking meeting just keep the last one
+        while (len(minHeap)>0 and meeting.start>=minHeap[0].end):
             heappop(minHeap)
         heappush(minHeap,meeting)
         minRooms = max(minRooms,len(minHeap))
