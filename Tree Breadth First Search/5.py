@@ -1,0 +1,1 @@
+#bfs, to get a distance field until one node has no left or right
